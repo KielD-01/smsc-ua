@@ -105,7 +105,10 @@ abstract class Sender
     {
         $this->http = new Client([
             'base_uri' => self::API_ENDPOINT,
-            'cookies' => true
+            'cookies' => true,
+            'headers' => [
+                'User-Agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.121 Safari/537.36'
+            ]
         ]);
     }
 
@@ -168,7 +171,7 @@ abstract class Sender
     {
         self::$locale = mb_strtolower($locale);
 
-        if(!array_key_exists($locale, self::LOCALES)){
+        if (!array_key_exists($locale, self::LOCALES)) {
             $availableLocales = implode(', ', array_keys(self::LOCALES));
             throw new Exception("Locale {$locale} does not exists within available locales. Use one from `{$availableLocales}`");
         }
