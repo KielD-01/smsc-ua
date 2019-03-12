@@ -1,0 +1,20 @@
+{
+    "name": "kield01/smsc-ua",
+    "description": "SMSC UA package for PHP",
+    "type": "library",
+    "require": {
+        "fabpot/goutte": "^3.2",
+        "symfony/var-dumper": "^4.2"
+    },
+    "authors": [
+        {
+            "name": "Roman Kozin",
+            "email": "romanko95.rk@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "KielD01\\SmscUA\\" : "src/"
+        }
+    }
+}
